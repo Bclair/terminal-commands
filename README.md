@@ -41,11 +41,19 @@ hdiutil convert /path/imagefile.iso -format UDRW -o /path/convertedimage.dmg
 // Restart OS X UI
 sudo killall -HUP WindowServer
 
-// Homebrew-cask commands
+// Install brew-cask
+brew install caskroom/cask/brew-cask
+
+// Install alternate versions tap
+brew tap caskroom/versions
+
+// Install necessary apps
 brew cask install google-chrome
 brew cask install google-chrome-canary
 brew cask install firefox
 brew cask install firefox-nightly
 brew cask install atom
+brew cask install keepingyouawake
+brew cask install mamp
 ```
 
