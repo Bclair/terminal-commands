@@ -41,6 +41,18 @@ hdiutil convert /path/imagefile.iso -format UDRW -o /path/convertedimage.dmg
 // Restart OS X UI
 sudo killall -HUP WindowServer
 
+// Generate a gif from a mov with ffmpeg
+ffmpeg -i video.mov -pix_fmt rgb24 output.gif
+
+// Reduce the frame rate and size. Set the start time and duration
+ffmpeg -ss 00:00:00.000 -i video.mov -pix_fmt rgb24 -r 10 -s 320x240 -t 00:00:10.000 output.gif
+
+// Optimize gif with ImageMagick
+convert -layers Optimize output.gif output_optimized.gif
+
+// Optimize gif with gifsicle
+gifsicle -O3 output.gif -o ouptput-optimized.gif
+
 // Install brew-cask
 brew install caskroom/cask/brew-cask
 
